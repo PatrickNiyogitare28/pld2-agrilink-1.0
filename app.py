@@ -1,16 +1,11 @@
-# This is a sample Python script.
+# Author: @Patrick
+import argparse  # Module for parsing command-line arguments
+import pandas as pd  # Module for data manipulation and analysis
+from rich import print  # Import rich print for styled printing
+from rich.console import Console  # Import rich console for styled output
+from rich.table import Table  # Import rich table for styled tables
+import os  # Module providing functions to interact with the operating system
 
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
+# Initialize rich console
+console = Console()
 
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
