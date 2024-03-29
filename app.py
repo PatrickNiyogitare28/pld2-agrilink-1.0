@@ -138,3 +138,7 @@ def main():
                 break
     else:
         print("[bold red]Invalid choice. Please enter 1, 2, or 3.[/bold red]")
+
+# Author: @Aubert
+if __name__ == "__main__":
+    main()
