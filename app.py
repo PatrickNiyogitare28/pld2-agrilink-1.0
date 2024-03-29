@@ -23,6 +23,7 @@ def load_from_csv():
         return pd.DataFrame()  # Return empty DataFrame if file is not found
 
 
+# Author @Blessing
 # Function to display data in a formatted table
 def display_data(df):
     if df.empty:
