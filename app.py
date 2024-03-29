@@ -23,19 +23,20 @@ def load_from_csv():
         return pd.DataFrame()  # Return empty DataFrame if file is not found
 
 
+# Function to display data in a formatted table
 def display_data(df):
     if df.empty:
-        print("[bold red]No data available.[/bold red]") 
+        print("[bold red]No data available.[/bold red]")  # Print message if DataFrame is empty
     else:
-        table = Table(show_header=True, header_style="bold magenta") 
-        table.add_column("Date", style="cyan", justify="center") 
-        table.add_column("Location", style="cyan", justify="center")  
-        table.add_column("Temperature", style="cyan", justify="center") 
-        table.add_column("Precipitation", style="cyan", justify="center") 
-        table.add_column("Humidity", style="cyan", justify="center") 
-        table.add_column("Wind Speed", style="cyan", justify="center") 
+        table = Table(show_header=True, header_style="bold magenta")  # Create a table for displaying data
+        table.add_column("Date", style="cyan", justify="center")  # Add column for Date
+        table.add_column("Location", style="cyan", justify="center")  # Add column for Location
+        table.add_column("Temperature", style="cyan", justify="center")  # Add column for Temperature
+        table.add_column("Precipitation", style="cyan", justify="center")  # Add column for Precipitation
+        table.add_column("Humidity", style="cyan", justify="center")  # Add column for Humidity
+        table.add_column("Wind Speed", style="cyan", justify="center")  # Add column for Wind Speed
 
-       
+        # Add rows for each data entry
         for index, row in df.iterrows():
             table.add_row(
                 str(row['Date']),
@@ -46,4 +47,4 @@ def display_data(df):
                 str(row['Wind Speed'])
             )
 
-        console.print(table)
+        console.print(table)  # Print the table to console
