@@ -22,6 +22,12 @@ def load_from_csv():
     except FileNotFoundError:
         return pd.DataFrame()  # Return empty DataFrame if file is not found
 
+
+def display_options_farmers():
+    table = Table(show_header=True, header_style="bold magenta")
+    table.add_column("Option", style="cyan", justify="center")
+    table.add_column("Description", style="green", justify="center")
+
 # Author: @AyomideAgbaje
 # Function to input climate data
 def input_climate_data():
