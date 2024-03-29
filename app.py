@@ -58,3 +58,6 @@ def filter_by_date(df):
         print("No data available for the given date.")  # Print message if no data found
     else:
         display_data(filtered_data)  # Display filtered data
+def filter_by_location(df):
+       location = input("Enter location: ")  # Prompt user to input location
+    filtered_data = df[df['Location'] == location]  # Filter DataFrame by location
