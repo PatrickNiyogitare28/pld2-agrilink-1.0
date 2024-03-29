@@ -49,3 +49,12 @@ def display_data(df):
             )
 
         console.print(table)  # Print the table to console
+# Author @izerekerie
+# Function to filter data by date
+def filter_by_date(df):
+    date = input("Enter date (YYYY-MM-DD): ")  # Prompt user to input date
+    filtered_data = df[df['Date'] == date]  # Filter DataFrame by date
+    if filtered_data.empty:
+        print("No data available for the given date.")  # Print message if no data found
+    else:
+        display_data(filtered_data)  # Display filtered data
