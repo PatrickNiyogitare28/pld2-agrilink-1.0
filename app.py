@@ -23,15 +23,20 @@ def load_from_csv():
         return pd.DataFrame()  # Return empty DataFrame if file is not found
 
 
+# Author: @Aubert
+# Function to display options for farmers
 def display_options_farmers():
+    # Create a table for displaying options
     table = Table(show_header=True, header_style="bold magenta")
     table.add_column("Option", style="cyan", justify="center")
     table.add_column("Description", style="green", justify="center")
 
+    # Add rows for each option
     table.add_row("1", "List  all data ")
     table.add_row("2", "Search by date")
     table.add_row("3", "Search location")
 
+    # Print table to console
     console.print("\n[b]Select an option:[/b]")
     console.print(table)
 
