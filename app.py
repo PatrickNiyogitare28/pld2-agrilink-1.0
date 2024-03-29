@@ -61,3 +61,16 @@ def filter_by_date(df):
 def filter_by_location(df):
     location = input("Enter location: ")  # Prompt user to input location
     filtered_data = df[df['Location'] == location]  # Filter DataFrame by location
+
+# Author: @Nicole
+# Main function
+def main():
+    print("\n---------------------------------------------------")
+    print("------------------- AGRI-LINK-1.0------------------")
+    print("---------------------------------------------------")
+    while True:
+        print("\n\n[bold blue]Select your role:[/bold blue]")
+        print("1. Agency")
+        print("2. Farmer")
+        print("3. Exit")
+        choice = input("\nEnter your choice (1, 2, or 3): ")  # Prompt user to select choice
