@@ -28,6 +28,10 @@ def display_options_farmers():
     table.add_column("Option", style="cyan", justify="center")
     table.add_column("Description", style="green", justify="center")
 
+    table.add_row("1", "List  all data ")
+    table.add_row("2", "Search by date")
+    table.add_row("3", "Search location")
+
 # Author: @AyomideAgbaje
 # Function to input climate data
 def input_climate_data():
