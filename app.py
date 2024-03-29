@@ -22,6 +22,24 @@ def load_from_csv():
     except FileNotFoundError:
         return pd.DataFrame()  # Return empty DataFrame if file is not found
 
+# Author: @AyomideAgbaje
+# Function to input climate data
+def input_climate_data():
+    print("\nEnter climate metrics:")
+    temperature = float(input("Temperature: "))  # Prompt user to input temperature
+    precipitation = float(input("Precipitation: "))  # Prompt user to input precipitation
+    humidity = float(input("Humidity: "))  # Prompt user to input humidity
+    wind_speed = float(input("Wind Speed: "))  # Prompt user to input wind speed
+    location = input("Location: ")  # Prompt user to input location
+    date = input("Date (YYYY-MM-DD): ")  # Prompt user to input date
+
+    # Create a dictionary containing the input data
+    return {'Date': date, 'Location': location, 'Temperature': temperature,
+            'Precipitation': precipitation, 'Humidity': humidity, 'Wind Speed': wind_speed}
+
+# Function to display data visualization
+def display_visualization(df):
+    print(df)
 
 # Author @Blessing
 # Function to display data in a formatted table
