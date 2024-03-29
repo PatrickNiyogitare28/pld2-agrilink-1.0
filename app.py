@@ -94,3 +94,11 @@ def main():
                 filter_by_date(df)  # Filter data by date
             elif option == '3':  # If option is 3 (Search by location)
                 filter_by_location(df)  # Filter data by location
+                else:
+                print("[bold red]Invalid choice. Please enter 1, 2, or 3.[/bold red]")  # Print error message for invalid choice
+        elif choice == '3':
+
+            print("[bold]Exiting...[/bold]")
+            break
+        else:
+            print("[bold red]Invalid choice. Please enter 1, 2, or 3.[/bold red]")
