@@ -32,6 +32,9 @@ def display_options_farmers():
     table.add_row("2", "Search by date")
     table.add_row("3", "Search location")
 
+    console.print("\n[b]Select an option:[/b]")
+    console.print(table)
+
 # Author: @AyomideAgbaje
 # Function to input climate data
 def input_climate_data():
