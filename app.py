@@ -25,12 +25,25 @@ def load_from_csv():
 
 def display_data(df):
     if df.empty:
-        print("[bold red]No data available.[/bold red]")
+        print("[bold red]No data available.[/bold red]") 
     else:
-        table = Table(show_header=True, header_style="bold magenta")
-        table.add_column("Date", style="cyan", justify="center")
-        table.add_column("Location", style="cyan", justify="center")
-        table.add_column("Temperature", style="cyan", justify="center")
-        table.add_column("Precipitation", style="cyan", justify="center")
-        table.add_column("Humidity", style="cyan", justify="center")
-        table.add_column("Wind Speed", style="cyan", justify="center")
+        table = Table(show_header=True, header_style="bold magenta") 
+        table.add_column("Date", style="cyan", justify="center") 
+        table.add_column("Location", style="cyan", justify="center")  
+        table.add_column("Temperature", style="cyan", justify="center") 
+        table.add_column("Precipitation", style="cyan", justify="center") 
+        table.add_column("Humidity", style="cyan", justify="center") 
+        table.add_column("Wind Speed", style="cyan", justify="center") 
+
+       
+        for index, row in df.iterrows():
+            table.add_row(
+                str(row['Date']),
+                str(row['Location']),
+                str(row['Temperature']),
+                str(row['Precipitation']),
+                str(row['Humidity']),
+                str(row['Wind Speed'])
+            )
+
+        console.print(table)
