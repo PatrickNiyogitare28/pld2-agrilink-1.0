@@ -22,7 +22,7 @@ def load_from_csv():
     except FileNotFoundError:
         return pd.DataFrame()  # Return empty DataFrame if file is not found
 
-# Author: @Ayo
+# Author: @AyomideAgbaje
 # Function to input climate data
 def input_climate_data():
     print("\nEnter climate metrics:")
