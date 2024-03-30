@@ -26,4 +26,14 @@ Agri-Link 1.0 is a command-line application designed to assist both climate agen
   - Choose from options to list all data, search by date, or search by location.
   - Follow the prompts to input date or location for filtering data.
 
-## Example
+## Demo
+[Watch Demo Loom](https://www.loom.com/share/db31646fbcb746699a12b05ac46420b4?sid=b0d0b521-6ebf-4f93-90f3-80cbf131f37c)
+https://www.loom.com/share/db31646fbcb746699a12b05ac46420b4?sid=b0d0b521-6ebf-4f93-90f3-80cbf131f37c
+
+## Contributors
+- [Blessing Hirwa](https://github.com/hirwablessing)
+- [Ayomide Agbaje](https://github.com/AgbajeCity)
+- [Ange Nicole Mukundwa](https://github.com/AngeNicole)
+- [Kerie Izere](https://github.com/izerekerie)
+- [Aubert Gloire](https://github.com/aubert-gloire)
+- [Patrick Niyogitare](https://github.com/patrickniyogitare28)
