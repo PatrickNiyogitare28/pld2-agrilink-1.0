@@ -9,10 +9,13 @@ import os  # Module providing functions to interact with the operating system
 # Initialize rich console
 console = Console()
 
+
 # Function to save climate data to a CSV file
 def save_to_csv(data):
     df = pd.DataFrame(data)  # Create DataFrame from input data
-    df.to_csv('climate_data.csv', mode='a', index=False, header=not os.path.exists('climate_data.csv'))  # Save DataFrame to CSV file
+    df.to_csv('climate_data.csv', mode='a', index=False,
+              header=not os.path.exists('climate_data.csv'))  # Save DataFrame to CSV file
+
 
 # Function to load climate data from a CSV file
 def load_from_csv():
@@ -40,6 +43,7 @@ def display_options_farmers():
     console.print("\n[b]Select an option:[/b]")
     console.print(table)
 
+
 # Author: @AyomideAgbaje
 # Function to input climate data
 def input_climate_data():
@@ -55,9 +59,11 @@ def input_climate_data():
     return {'Date': date, 'Location': location, 'Temperature': temperature,
             'Precipitation': precipitation, 'Humidity': humidity, 'Wind Speed': wind_speed}
 
+
 # Function to display data visualization
 def display_visualization(df):
     print(df)
+
 
 # Author @Blessing
 # Function to display data in a formatted table
@@ -85,6 +91,8 @@ def display_data(df):
             )
 
         console.print(table)  # Print the table to console
+
+
 # Author @izerekerie
 # Function to filter data by date
 def filter_by_date(df):
@@ -94,9 +102,15 @@ def filter_by_date(df):
         print("No data available for the given date.")  # Print message if no data found
     else:
         display_data(filtered_data)  # Display filtered data
+
+
 def filter_by_location(df):
     location = input("Enter location: ")  # Prompt user to input location
     filtered_data = df[df['Location'] == location]  # Filter DataFrame by location
+    if filtered_data.empty:
+        print("No data available for the given location.")
+    else:
+        display_data(filtered_data)
 
 # Author: @Nicole
 # Main function
@@ -111,33 +125,35 @@ def main():
         print("3. Exit")
         choice = input("\nEnter your choice (1, 2, or 3): ")  # Prompt user to select choice
 
-    if choice == '1':  # If choice is 1 (Agency)
-                args = argparse.Namespace(role='agency')  # Simulate argparse Namespace for agency
-                data = input_climate_data()  # Input climate data
-                save_to_csv([data])  # Save climate data to CSV file
-                print("[bold green]Climate data saved successfully.[/bold green]")  # Print success message
-    elif choice == '2':  # If choice is 2 (Farmer)
-                args = argparse.Namespace(role='farmer')  # Simulate argparse Namespace for farmer
-                display_options_farmers()  # Display options for farmers
-                option = input("Enter your choice (1, 2, or 3): ")  # Prompt user to select option
-                df = load_from_csv()  # Load climate data from CSV file
-                if option == '1':  # If option is 1 (List all data)
-                    if df.empty:
-                        print("[bold red]No climate data available.[/bold red]")  # Print message if no data found
-                    else:
-                        display_data(df)  # Display all data
-                elif option == '2':  # If option is 2 (Search by date)
-                    filter_by_date(df)  # Filter data by date
-                elif option == '3':  # If option is 3 (Search by location)
-                    filter_by_location(df)  # Filter data by location
+        if choice == '1':  # If choice is 1 (Agency)
+            args = argparse.Namespace(role='agency')  # Simulate argparse Namespace for agency
+            data = input_climate_data()  # Input climate data
+            save_to_csv([data])  # Save climate data to CSV file
+            print("[bold green]Climate data saved successfully.[/bold green]")  # Print success message
+        elif choice == '2':  # If choice is 2 (Farmer)
+            args = argparse.Namespace(role='farmer')  # Simulate argparse Namespace for farmer
+            display_options_farmers()  # Display options for farmers
+            option = input("Enter your choice (1, 2, or 3): ")  # Prompt user to select option
+            df = load_from_csv()  # Load climate data from CSV file
+            if option == '1':  # If option is 1 (List all data)
+                if df.empty:
+                    print("[bold red]No climate data available.[/bold red]")  # Print message if no data found
                 else:
-                    print("[bold red]Invalid choice. Please enter 1, 2, or 3.[/bold red]")  # Print error message for invalid choice
-    elif choice == '3':
+                    display_data(df)  # Display all data
+            elif option == '2':  # If option is 2 (Search by date)
+                filter_by_date(df)  # Filter data by date
+            elif option == '3':  # If option is 3 (Search by location)
+                filter_by_location(df)  # Filter data by location
+            else:
+                print(
+                    "[bold red]Invalid choice. Please enter 1, 2, or 3.[/bold red]")  # Print error message for invalid choice
+        elif choice == '3':
 
-                print("[bold]Exiting...[/bold]")
-                break
-    else:
-        print("[bold red]Invalid choice. Please enter 1, 2, or 3.[/bold red]")
+            print("[bold]Exiting...[/bold]")
+            break
+        else:
+            print("[bold red]Invalid choice. Please enter 1, 2, or 3.[/bold red]")
+
 
 # Author: @Aubert
 if __name__ == "__main__":
